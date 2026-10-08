@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real-Time Weather Dashboard</title>
+<link rel="stylesheet" href="weather-dashboard.css">
+</head>
+<body>
+<main class="app">
+<header>
+  <div>
+    <p class="eyebrow">ASYNC JAVASCRIPT & RESTFUL APIs</p>
+    <h1>Weather Dashboard</h1>
+    <p class="subtitle">Fetch and process live JSON weather data using JavaScript async/await.</p>
+  </div>
+  <span id="status">Ready</span>
+</header>
+
+<section class="search-card">
+  <form id="searchForm">
+    <label for="city">Search by city</label>
+    <div class="search-row">
+      <input id="city" placeholder="e.g. Indore, London, Tokyo" required>
+      <button>Search Weather</button>
+    </div>
+    <small>Powered by Open-Meteo — no API key required.</small>
+  </form>
+</section>
+
+<div id="error" class="error hidden"></div>
+
+<section id="weather" class="hidden">
+  <div class="location">
+    <div>
+      <p class="eyebrow">CURRENT CONDITIONS</p>
+      <h2 id="name">—</h2>
+      <p id="meta">—</p>
+    </div>
+    <small id="updated">—</small>
+  </div>
+
+  <div class="metrics">
+    <article>🌡️<p>Temperature</p><strong id="temp">—</strong> °C</article>
+    <article>💧<p>Humidity</p><strong id="humidity">—</strong> %</article>
+    <article>💨<p>Wind Speed</p><strong id="wind">—</strong> km/h</article>
+    <article>☁️<p>Condition</p><strong id="condition">—</strong></article>
+  </div>
+
+  <div class="grid">
+    <article class="panel">
+      <p class="eyebrow">NEXT 7 DAYS</p><h3>Forecast</h3>
+      <div id="forecast" class="forecast"></div>
+    </article>
+    <article class="panel">
+      <p class="eyebrow">NESTED JSON</p><h3>API Response</h3>
+      <details><summary>View parsed JSON</summary><pre id="json"></pre></details>
+    </article>
+  </div>
+</section>
+
+<section id="empty" class="empty">
+  <div>🌤️</div><h2>Find your weather</h2>
+  <p>Enter a city above to retrieve live weather information.</p>
+</section>
+
+<footer>Built with Fetch API + async/await · Data: Open-Meteo</footer>
+</main>
+<script src="weather-dashboard.js"></script>
+</body>
+</html>
